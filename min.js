@@ -1,7 +1,7 @@
 const statusDisplay = document.querySelector(".game_status");
 
 let gameActive = true;
-let currentPlayer = "X";
+let currentPlayer = "";
 let gameState = ["", "", "", "", "", "", "", "", ""];
 
 const winningMessage = () => `Player ${currentPlayer} has won!`;
@@ -18,7 +18,7 @@ const winningConditions = [
   [1, 4, 7],
   [2, 5, 8],
   [0, 4, 8],
-  [2, 4, 6],
+  [2, 4, 6]
 ];
 
 function handleCellPlayed(clickedCell, clickedCellIndex) {
@@ -26,10 +26,10 @@ function handleCellPlayed(clickedCell, clickedCellIndex) {
   clickedCell.innerHTML = currentPlayer;
 }
 
-function handlePlayerChange() {
-  currentPlayer = currentPlayer === "X" ? "O" : "X";
-  statusDisplay.innerHTML = currentPlayerTurn();
-}
+  function handlePlayerChange() {
+   currentPlayer = currentPlayer == "X" ? "O" : "X";
+   statusDisplay.innerHTML = currentPlayerTurn();
+ }
 
 function handleResultValidation() {
   let roundWon = false;
@@ -58,7 +58,7 @@ function handleResultValidation() {
     return;
   }
 
-  handlePlayerChange();
+  handlePlayerChange('.player1 .player2');
 }
 
 function handleCellClick(clickedCellEvent) {
@@ -69,13 +69,13 @@ function handleCellClick(clickedCellEvent) {
 
   if (gameState[clickedCellIndex] !== "" || !gameActive) return;
 
-  handleCellPlayed(clickedCell, clickedCellIndex);
+  handleCellPlayed(clickedCell, clickedCellIndex,handlePlayerChange);
   handleResultValidation();
 }
 
 function handleRestartGame() {
   gameActive = true;
-  currentPlayer = "O";
+  currentPlayer = "";
   gameState = ["", "", "", "", "", "", "", "", ""];
   statusDisplay.innerHTML = currentPlayerTurn();
   document.querySelectorAll(".cell").forEach((cell) => (cell.innerHTML = ""));
@@ -85,3 +85,5 @@ document
   .querySelectorAll(".cell")
   .forEach((cell) => cell.addEventListener("click", handleCellClick));
 document.querySelector(".restart").addEventListener("click", handleRestartGame);
+document.querySelector(".player1").addEventListener("click",handlePlayerChange);
+

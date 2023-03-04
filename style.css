@@ -7,7 +7,7 @@ section {
 .cell {
     width: 100px;
     height: 100px;
-    border: 2px solid #ecd7ba;
+    border: 1px solid #ecd7ba;
     cursor: pointer;
     line-height: 100px;
     font-size: 60px;
@@ -25,16 +25,19 @@ section {
     color: #04c0b2; 
 }
 .game_status {
-    font-size: 45px;
+    font-size: 40px;
     color: #d7a62f;
-    margin: 20px auto;
+    margin: 25px auto;
 }
-.restart{
+.Button button{
     background-color: #f7e4ac; 
     width: 200px;
     height: 50px;
     font-size: 25px;
     border: 2px solid #d86c23;
     border-radius: 15px;
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 45%; 
 }
