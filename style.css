@@ -1,5 +1,6 @@
 body {
-    font-family: cursive;
+    font-family:sans-serif;
+    margin: 0px;
 }
 section {
     text-align: center;
@@ -30,7 +31,7 @@ section {
     margin: 25px auto;
 }
 .Button button{
-    background-color: #f7e4ac; 
+    background-color: #f7e4ac;
     width: 200px;
     height: 50px;
     font-size: 25px;
@@ -39,5 +40,5 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 45%; 
+    margin-left: 40%;
 }
